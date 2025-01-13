@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE / editor settings
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Environments
+.venv/
+venv/
+env/
+*.log
+
+# Webdriver executables
+drivers/
+
+# Test results / coverage
+.coverage
+htmlcov/
+*.egg-info
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Specific project files (optional, if you have files like these)
+*.log
+*.sqlite
