@@ -1,11 +1,11 @@
-from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import *
 
-def test_profile_logout():
-    driver = webdriver.Chrome()
-    driver.get("https://stellarburgers.nomoreparties.site/")
+BASE_URL = "https://stellarburgers.nomoreparties.site/"
+
+def test_profile_logout(driver):
+    driver.get(BASE_URL)
 
     driver.find_element(*LOGIN_BUTTON).click()
     driver.find_element(*EMAIL_INPUT).send_keys("qweee@mail.ru")
@@ -18,5 +18,3 @@ def test_profile_logout():
 
     login_page = WebDriverWait(driver, 3).until(EC.visibility_of_element_located(LOGIN_PAGE_HEADER))
     assert login_page.text == "Вход"
-
-    driver.quit()

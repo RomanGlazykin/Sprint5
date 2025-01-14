@@ -1,6 +1,7 @@
 import pytest
 import random
 import string
+from selenium import webdriver
 
 
 @pytest.fixture
@@ -12,3 +13,10 @@ def random_email():
     domains = ["ya.ru", "mail.ru", "gmail.com", "example.com"] #Список доменов
     domain = random.choice(domains) #Выбор домена из списка
     return f"{login}@{domain}"
+
+
+@pytest.fixture(scope="function")
+def driver():
+    driver = webdriver.Chrome()
+    yield driver
+    driver.quit()
